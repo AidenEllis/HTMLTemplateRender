@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 import os
 import subprocess
 
+
 project_version = subprocess.run(['git', 'describe', '--tags'], stdout=subprocess.PIPE).stdout.decode("utf-8").strip()
 assert "." in project_version
 
@@ -27,7 +28,7 @@ setup(
     packages=find_packages(),
     url='https://github.com/QuackCoding/HTMLTemplateRender',
     package_data={'HTMLTemplateRender': ['VERSION']},
-    install_requires=['requests'],
+    install_requires=['jinja2'],
     keywords=['python', 'HTML', 'template', 'html template renderer', 'HTMLTemplateRender'],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
